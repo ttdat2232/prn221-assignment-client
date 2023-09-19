@@ -10,6 +10,7 @@ import { ApiInterceptor } from './core/interceptors/api.interceptor';
 import { CarInforComponent } from './features/car/car-infor/car-infor.component';
 import { NavbarComponent } from './core/layouts/navbar/navbar.component';
 import { HeaderComponent } from './core/layouts/header/header.component';
+import { AuthComponent } from './core/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HeaderComponent } from './core/layouts/header/header.component';
     CarComponent,
     CarInforComponent,
     NavbarComponent,
-    HeaderComponent
+    HeaderComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

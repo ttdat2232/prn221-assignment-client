@@ -11,7 +11,7 @@ import { Observable } from 'rxjs'
 @Injectable()
 export class CarService {
   
-  carApiUrl: string = AppConstant.API_BASE_URL + "CarInformation";
+  carApiUrl: string = AppConstant.API_BASE_URL + "api/CarInformation";
   constructor(private http: HttpClient) {}
 
   GetCars(pageIndex: number = 0, pageSize: number = 4, name: string = "", statuses: number[] = []): Observable<GetResult<Car>> {
