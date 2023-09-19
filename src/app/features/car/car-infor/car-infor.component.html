@@ -1,0 +1,21 @@
+<div class="col mb-5  car-infor">
+    <div class="card h-100">
+        <img class="card-img-top"
+            src="https://th.bing.com/th/id/R.06bbd1f7e6ad1f4291d9d6e9796d30c4?rik=tmM8PTZXPoGW3w&pid=ImgRaw&r=0"
+            alt="..." />
+        <div class="card-body p-4">
+            <div class="text-center text-area">
+                <h5 class="fw-bolder">{{car.carName}}</h5>
+                <span class="text-success">{{car.carRentingPricePerDay}}$</span>
+            </div>
+            <div style="min-height: 100px;">
+                <h6>{{car.carDescription}}</h6>
+            </div>
+            <button 
+                class="btn btn-primary w-100"
+                [ngClass]="{'disabled': isSelected}">
+                Rent
+            </button>
+        </div>
+    </div>
+</div>

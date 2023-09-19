@@ -1,0 +1,14 @@
+<div class="d-flex flex-xl-row flex-sm-column justify-content-center">
+    <app-car-infor
+        class="w-25"
+        *ngFor="let car of carResult.values | 
+            paginate: {
+            itemsPerPage: carResult.pageSize,
+            currentPage: carResult.pageIndex + 1,
+            totalItems: carResult.totalCount}" [car]="car">
+    </app-car-infor>
+</div>
+<div class="d-flex flex-xl-row flex-sm-column justify-content-center">
+    <pagination-controls (pageChange)="pageChange($event)"></pagination-controls>
+    <input class="d-inline form-control w-25" placeholder="Car's name" [(ngModel)]="name" (input)="handleNameChange()">
+</div>
