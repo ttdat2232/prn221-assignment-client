@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-import { GetResult } from 'src/app/core/utilities/get-result.model';
+import { GetResult } from 'src/app/core/models/get-result.model';
 import { Car } from '../models/car.model';
 import { AppConstant } from 'src/app/core/utilities/constants';
 import { CarSearch } from '../models/car.search.model';
