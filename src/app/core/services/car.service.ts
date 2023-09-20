@@ -18,4 +18,8 @@ export class CarService {
     let searchQuery = this.carApiUrl + new CarSearch(pageIndex, pageSize, name, statuses).toQueries();
     return this.http.get<GetResult<Car>>(searchQuery);
   }
+
+  GetCarById(id: number): Observable<Car> {
+    return this.http.get<Car>(`${this.carApiUrl}/${id}`);
+  }
 }

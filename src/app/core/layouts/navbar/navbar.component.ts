@@ -33,4 +33,11 @@ export class NavbarComponent implements OnInit {
       this.numberOfCars = selectedCarId.length;
     }
   }
+
+  moveToCart() {
+    if(this.numberOfCars > 0) 
+      this.router.navigate(['cart'], {
+        relativeTo: this.route,
+      });
+  }
 }

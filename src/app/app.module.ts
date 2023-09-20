@@ -11,6 +11,8 @@ import { CarInforComponent } from './features/car/car-infor/car-infor.component'
 import { NavbarComponent } from './core/layouts/navbar/navbar.component';
 import { HeaderComponent } from './core/layouts/header/header.component';
 import { AuthComponent } from './core/auth/auth.component';
+import { CartComponent } from './features/cart/cart.component';
+import { CartDetailComponent } from './features/cart/cart-detail/cart-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { AuthComponent } from './core/auth/auth.component';
     CarInforComponent,
     NavbarComponent,
     HeaderComponent,
-    AuthComponent
+    AuthComponent,
+    CartComponent,
+    CartDetailComponent
   ],
   imports: [
     BrowserModule,
