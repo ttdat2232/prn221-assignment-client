@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Car } from '../../core/models/car.model';
 import { CarService } from '../../core/services/car.service';
 import { GetResult } from 'src/app/core/models/get-result.model';
+import { LocalStorageService } from 'src/app/core/services/local-storage.service';
 
 @Component({
   selector: 'app-car',
@@ -14,7 +15,7 @@ export class CarComponent {
   pageIndex: number = 0;
   name: string = "";
   statuses: number[] = [1];
-  constructor(private carService: CarService) { }
+  constructor(private carService: CarService, private localStorageService: LocalStorageService) { }
 
   ngOnInit() {
     this.getCars();
@@ -37,5 +38,18 @@ export class CarComponent {
           this.name = "";
         this.getCars();
       }, 1000);
+  }
+
+  addToCart(event: number) {
+    let selectedCarId: number[] = [];
+    const selectedCar = localStorage.getItem("selected-car");
+    if(selectedCar){
+      selectedCarId = JSON.parse(selectedCar);
+      selectedCarId.push(event);
+    }
+    else {
+      selectedCarId.push(event)
+    }
+    this.localStorageService.setItem("selected-car", JSON.stringify(selectedCarId));
   }
 }

@@ -36,12 +36,11 @@ export class AuthComponent {
     this.authService.login(new AuthenticateModel(email, password))
       .subscribe({
         next: res => {
-          localStorage.setItem("isAdmin", `${res.isAdmin}`);
-          localStorage.setItem("customerId", `${res.customerId}`);
+          this.localStorageService.setItem("isAdmin", `${res.isAdmin}`);
+          this.localStorageService.setItem("customerId", `${res.customerId}`);
           this.router.navigate(['home'], {
             relativeTo: this.route
           });
-          this.localStorageService.isLogined.next(true);
           this.isSubmitting = false;
         },
         error: err => {

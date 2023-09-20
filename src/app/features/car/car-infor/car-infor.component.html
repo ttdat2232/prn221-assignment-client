@@ -12,6 +12,7 @@
                 <h6>{{car.carDescription}}</h6>
             </div>
             <button 
+                (click)="handleRenting()"
                 class="btn btn-primary w-100"
                 [ngClass]="{'disabled': isSelected}">
                 Rent
