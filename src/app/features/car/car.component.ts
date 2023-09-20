@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Car } from '../../core/models/car.model';
 import { CarService } from '../../core/services/car.service';
-import { GetResult } from 'src/app/core/utilities/get-result.model';
+import { GetResult } from 'src/app/core/models/get-result.model';
 
 @Component({
   selector: 'app-car',
