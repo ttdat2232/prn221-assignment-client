@@ -1,12 +1,22 @@
-<form>
-    <h1>{{car.carName}}</h1>
-    <span>Price/Day: </span><span class="text-success">{{car.carRentingPricePerDay}}</span>
+<h1 class="mt-2">{{car.carName}}</h1>
+<span>Price/Day: </span><span class="text-success">{{car.carRentingPricePerDay}}</span>
+<div [formGroup]="rentingDetail" >
     <div class="form-outline">
         <label class="form-label">Start Date:</label>
-        <input class="form-control" type="date"/>
+        <input class="form-control" formControlName="startDate" type="date" />
+        <div *ngIf="rentingDetail.get('startDate')?.invalid && (rentingDetail.get('startDate')?.dirty || rentingDetail.get('startDate')?.touched) ">
+            <span class="text-danger" *ngIf="rentingDetail.get('startDate')?.errors">
+                Please choose later day
+            </span>
+        </div>
     </div>
     <div class="form-outline">
         <label class="form-label">End Date:</label>
-        <input class="form-control" type="date"/>
+        <input class="form-control" formControlName="endDate" type="date" />
+        <div *ngIf="rentingDetail.get('startDate')?.invalid && (rentingDetail.get('startDate')?.dirty || rentingDetail.get('startDate')?.touched) ">
+            <span class="text-danger" *ngIf="rentingDetail.get('startDate')?.errors">
+                Please choose later day
+            </span>
+        </div>
     </div>
-</form>
+</div>

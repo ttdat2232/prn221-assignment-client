@@ -33,6 +33,7 @@ export class AuthComponent {
   handleSubmission() {
     let email: string = this.authForm.value.email;
     let password: string = this.authForm.value.password;
+    this.isSubmitting = true;
     this.authService.login(new AuthenticateModel(email, password))
       .subscribe({
         next: res => {

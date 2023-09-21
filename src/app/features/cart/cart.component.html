@@ -1,6 +1,7 @@
-<div class="d-flex flex-column align-items-center">
-    <div *ngFor="let car of cars">
-        <app-cart-detail class="w-50" [car]="car"></app-cart-detail>
+<form class="d-flex flex-column align-items-center" (ngSubmit)="onSubmit()">
+    <div *ngFor="let rentingDetail of rentingDetails">
+        <app-cart-detail [rentingDetail]="rentingDetail"></app-cart-detail>
     </div>
-    <button class="btn btn-primary w-50 mt-3">Renting</button>
-</div>
+    <button [disabled]="rentingFormGroup.invalid" class="btn btn-primary w-50 mt-3">Renting</button>
+    <span class="text-danger">{{errorMessage}}</span>
+</form>

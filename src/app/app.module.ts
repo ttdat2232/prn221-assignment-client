@@ -13,6 +13,7 @@ import { HeaderComponent } from './core/layouts/header/header.component';
 import { AuthComponent } from './core/auth/auth.component';
 import { CartComponent } from './features/cart/cart.component';
 import { CartDetailComponent } from './features/cart/cart-detail/cart-detail.component';
+import { TransactionDetailComponent } from './features/transaction-detail/transaction-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CartDetailComponent } from './features/cart/cart-detail/cart-detail.com
     HeaderComponent,
     AuthComponent,
     CartComponent,
-    CartDetailComponent
+    CartDetailComponent,
+    TransactionDetailComponent
   ],
   imports: [
     BrowserModule,
