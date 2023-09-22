@@ -1,0 +1,21 @@
+<div class="w-100">
+    <div class="d-flex justify-content-center" *ngIf="rentingTransactions.length === 0">
+        <h1>You haven't bought anything yet</h1>
+    </div>
+    <table class="table table-hover table-responsive">
+        <thead>
+            <tr>
+                <th>Transaction's ID</th>
+                <th>Created at</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let rentingTransaction of rentingTransactions" (click)="getTransaction(rentingTransaction.rentingTransationId)">
+                <td>{{rentingTransaction.rentingTransationId}}</td>
+                <td>{{rentingTransaction.rentingDate | date: 'dd-MM-yyyy'}}</td>
+                <td>{{rentingTransaction.totalPrice}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

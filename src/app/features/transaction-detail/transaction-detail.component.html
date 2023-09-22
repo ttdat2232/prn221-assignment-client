@@ -1,1 +1,33 @@
-<p>{{rentingTransaction.rentingDate}}</p>
+<div class="d-flex flex-column">
+    <p>Transaction's ID: {{rentingTransaction.rentingTransationId}}</p>
+    <p>Created at: {{rentingTransaction.rentingDate | date: 'dd-MM-yyyy'}}</p>
+    <p>Total Price: {{rentingTransaction.totalPrice}}</p>
+    <div class="mb-1" *ngFor="let rentingDetail of rentingTransaction.rentingDetails">
+        <div class="row d-flex h-100">
+            <div class="col col-xl-10">
+                <div class="card" style="border-radius: 1rem;">
+                    <div class="row g-0">
+                        <div class="col-md-6 col-lg-5 d-none d-md-block">
+                            <img src="https://th.bing.com/th/id/R.06bbd1f7e6ad1f4291d9d6e9796d30c4?rik=tmM8PTZXPoGW3w&pid=ImgRaw&r=0"
+                                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                        </div>
+                        <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                            <div class="card-body p-4 p-lg-5 text-black">
+                                <div class="d-flex flex-row align-items-center">
+                                    <div>
+                                        <div class="d-flex align-items-center mb-3 pb-1">
+                                            <span class="h2 fw-bold mb-0">{{rentingDetail.carName}}</span>
+                                        </div>
+                                        <span class="h2 fw-bold mb-0 text-success">${{rentingDetail.price}}</span>
+                                    </div>
+                                    <h4>{{rentingDetail.startDate | date: 'dd-MM-yyyy'}}/{{rentingDetail.endDate | date:
+                                        'dd-MM-yyyy'}}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

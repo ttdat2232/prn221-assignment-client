@@ -16,13 +16,14 @@ export class TransactionDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams
       .subscribe(params => {
-        // let userId = params['userId'];
-        // let transactionId = params['transactionId'];
-        // let transactionQueries = new RentingTransactionQuery(userId, transactionId);
-        let url = params['url'];
-        this.rentingService.getRentingTransaction(url)
+        let userId = params['userId'];
+        let transactionId = params['transactionId'];
+        let transactionQueries = new RentingTransactionQuery(userId, transactionId);
+        this.rentingService.getRentingTransaction(transactionQueries)
         .subscribe({
-          next: data => this.rentingTransaction = data,
+          next: data => {
+            this.rentingTransaction = data;
+          },
           error: err => console.log(err)
         });
       })

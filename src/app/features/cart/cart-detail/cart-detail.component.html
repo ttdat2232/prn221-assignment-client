@@ -1,22 +1,46 @@
-<h1 class="mt-2">{{car.carName}}</h1>
-<span>Price/Day: </span><span class="text-success">{{car.carRentingPricePerDay}}</span>
-<div [formGroup]="rentingDetail" >
-    <div class="form-outline">
-        <label class="form-label">Start Date:</label>
-        <input class="form-control" formControlName="startDate" type="date" />
-        <div *ngIf="rentingDetail.get('startDate')?.invalid && (rentingDetail.get('startDate')?.dirty || rentingDetail.get('startDate')?.touched) ">
-            <span class="text-danger" *ngIf="rentingDetail.get('startDate')?.errors">
-                Please choose later day
-            </span>
-        </div>
-    </div>
-    <div class="form-outline">
-        <label class="form-label">End Date:</label>
-        <input class="form-control" formControlName="endDate" type="date" />
-        <div *ngIf="rentingDetail.get('startDate')?.invalid && (rentingDetail.get('startDate')?.dirty || rentingDetail.get('startDate')?.touched) ">
-            <span class="text-danger" *ngIf="rentingDetail.get('startDate')?.errors">
-                Please choose later day
-            </span>
+<div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+            <div class="row g-0">
+                <div class="col-md-6 col-lg-5 d-none d-md-block">
+                    <i class="p-3" (click)="removeCart()" >X</i>
+                    <img src="https://th.bing.com/th/id/R.06bbd1f7e6ad1f4291d9d6e9796d30c4?rik=tmM8PTZXPoGW3w&pid=ImgRaw&r=0"
+                        alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                </div>
+                <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                    <div class="card-body p-4 p-lg-5 text-black">
+                        <div [formGroup]="rentingDetail">
+                            <div class="d-flex align-items-center mb-3 pb-1">
+                                <span class="h1 fw-bold mb-0">{{car.carName}}</span>
+                                <span class="h1 fw-bold mb-0 text-success"> ${{car.carRentingPricePerDay}}</span>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="form2Example17">Start Date</label>
+                                <input type="date" id="form2Example17" formControlName="startDate"
+                                    class="form-control form-control-lg" />
+                                <div
+                                    *ngIf="rentingDetail.get('startDate')?.invalid && (rentingDetail.get('startDate')?.dirty || rentingDetail.get('startDate')?.touched) ">
+                                    <span class="text-danger" *ngIf="rentingDetail.get('startDate')?.errors">
+                                        Please choose later day
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="form2Example27">End Date</label>
+                                <input type="date" id="form2Example27" formControlName="endDate"
+                                    class="form-control form-control-lg" />
+                                <div
+                                    *ngIf="rentingDetail.get('startDate')?.invalid && (rentingDetail.get('startDate')?.dirty || rentingDetail.get('startDate')?.touched) ">
+                                    <span class="text-danger" *ngIf="rentingDetail.get('startDate')?.errors">
+                                        Please choose later day
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

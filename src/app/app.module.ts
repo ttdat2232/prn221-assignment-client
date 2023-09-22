@@ -14,6 +14,12 @@ import { AuthComponent } from './core/auth/auth.component';
 import { CartComponent } from './features/cart/cart.component';
 import { CartDetailComponent } from './features/cart/cart-detail/cart-detail.component';
 import { TransactionDetailComponent } from './features/transaction-detail/transaction-detail.component';
+import { UserProfileComponent } from './features/user-profile/user-profile.component';
+import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
+import { AdminComponent } from './features/admin/admin.component';
+import { CarTableComponent } from './features/admin/car-table/car-table.component';
+import { CreateCarComponent } from './features/admin/create-car/create-car.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -25,7 +31,12 @@ import { TransactionDetailComponent } from './features/transaction-detail/transa
     AuthComponent,
     CartComponent,
     CartDetailComponent,
-    TransactionDetailComponent
+    TransactionDetailComponent,
+    UserProfileComponent,
+    PageNotFoundComponent,
+    AdminComponent,
+    CarTableComponent,
+    CreateCarComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +44,8 @@ import { TransactionDetailComponent } from './features/transaction-detail/transa
     HttpClientModule,
     FormsModule,
     NgxPaginationModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgSelectModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor ,multi: true}

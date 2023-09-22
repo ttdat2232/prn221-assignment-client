@@ -1,4 +1,4 @@
-import { RentingDetail } from "./create.renting-details.model";
+import { RentingDetail } from "./renting-detail.model";
 
 export class RentingTransaction {
     constructor(

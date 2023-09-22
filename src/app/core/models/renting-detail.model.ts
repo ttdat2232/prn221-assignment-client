@@ -4,5 +4,6 @@ export class RentingDetail {
         public carId: number, 
         public startDate: Date,
         public endDate: Date,
-        public number?: number) {}
+        public price: number = 0,
+        public carName: string = "") {}
 }

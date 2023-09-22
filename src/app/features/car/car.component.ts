@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Car } from '../../core/models/car.model';
 import { CarService } from '../../core/services/car.service';
 import { GetResult } from 'src/app/core/models/get-result.model';
@@ -9,7 +9,7 @@ import { LocalStorageService } from 'src/app/core/services/local-storage.service
   templateUrl: './car.component.html',
   styleUrls: ['./car.component.scss']
 })
-export class CarComponent {
+export class CarComponent implements OnInit {
   carResult: GetResult<Car> = new GetResult<Car>();
   pageSize: number = 4;
   pageIndex: number = 0;
@@ -31,19 +31,19 @@ export class CarComponent {
   }
   timeOutId: any
   handleNameChange() {
-    if(this.timeOutId)
+    if (this.timeOutId)
       clearTimeout(this.timeOutId)
     this.timeOutId = setTimeout(() => {
-        if(!this.name)
-          this.name = "";
-        this.getCars();
-      }, 1000);
+      if (!this.name)
+        this.name = "";
+      this.getCars();
+    }, 1000);
   }
 
   addToCart(event: number) {
     let selectedCarId: number[] = [];
     const selectedCar = localStorage.getItem("selected-car");
-    if(selectedCar){
+    if (selectedCar) {
       selectedCarId = JSON.parse(selectedCar);
       selectedCarId.push(event);
     }

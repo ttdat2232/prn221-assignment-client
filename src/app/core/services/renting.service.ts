@@ -18,7 +18,12 @@ export class RentingService {
     return this.http.post<any>(this.rentingApiUrl, rentingDetails);
   }
 
-  getRentingTransaction(query: string): Observable<RentingTransaction> {
-    return this.http.get<RentingTransaction>(query);
+  getRentingTransaction(query: RentingTransactionQuery): Observable<RentingTransaction> {
+    let queryParams: string = `?userId=${query.userId}&transactionId=${query.transactionId}`
+    return this.http.get<RentingTransaction>(this.rentingApiUrl + queryParams);
+  }
+
+  getUserRentingsTransaction(userId: number): Observable<RentingTransaction[]> {
+    return this.http.get<RentingTransaction[]>(`${this.rentingApiUrl}/${userId}`);
   }
 }

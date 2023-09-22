@@ -11,21 +11,6 @@
                 <div class="card">
                     <div class="card-body py-5 px-md-5">
                         <form [formGroup]="authForm" (ngSubmit)="handleSubmission()">
-                            <!-- <div class="row">
-                                <div class="col-md-6 mb-4">
-                                    <div class="form-outline">
-                                        <input type="text" id="form3Example1" class="form-control" />
-                                        <label class="form-label" for="form3Example1">First name</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4">
-                                    <div class="form-outline">
-                                        <input type="text" id="form3Example2" class="form-control" />
-                                        <label class="form-label" for="form3Example2">Last name</label>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <h1>Sign in</h1>
                             <div class="form-outline mb-4">
                                 <label class="form-label">Email address:</label>
                                 <input type="email" formControlName="email" class="form-control" />
@@ -44,35 +29,10 @@
                                     Please enter password
                                 </span>
                             </div>
-                            <!-- <div class="form-check d-flex justify-content-center mb-4">
-                                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33"
-                                    checked />
-                                <label class="form-check-label" for="form2Example33">
-                                    Subscribe to our newsletter
-                                </label>
-                            </div> -->
-                            <button #submitButton [disabled]="authForm.invalid && isSubmitting == false " type="submit" class="btn btn-primary btn-block mb-4">
+                            <button [disabled]="authForm.invalid || submitted" class="btn btn-primary btn-block mb-4">
                                 Sign in
                             </button>
                             <br/>
-                            <!-- <div class="text-center">
-                                <p>or sign up with:</p>
-                                <button type="button" class="btn btn-link btn-floating mx-1">
-                                    <i class="fab fa-facebook-f"></i>
-                                </button>
-
-                                <button type="button" class="btn btn-link btn-floating mx-1">
-                                    <i class="fab fa-google"></i>
-                                </button>
-
-                                <button type="button" class="btn btn-link btn-floating mx-1">
-                                    <i class="fab fa-twitter"></i>
-                                </button>
-
-                                <button type="button" class="btn btn-link btn-floating mx-1">
-                                    <i class="fab fa-github"></i>
-                                </button>
-                            </div> -->
                             <span class="text-danger" >{{error}}</span>
                         </form>
                     </div>
