@@ -15,7 +15,7 @@
             </ul>
             <ul class="navbar-nav">
                 <li *ngIf="!isLogined" class="nav-item"><a class="nav-link" [routerLink]="['/login']" [routerLinkActive]="['active']">Login</a></li>
-                <li *ngIf="!isLogined" class="nav-item"><a class="nav-link" href="#">Register</a></li>
+                <li *ngIf="!isLogined" class="nav-item"><a class="nav-link" [routerLink]="['/register']" [routerLinkActive]="['active']">Register</a></li>
                 <button *ngIf="isLogined" class="btn btn-outline-dark" (click)="moveToCart()">
                     <i class="bi-cart-fill me-1"></i>
                     Cart

@@ -48,9 +48,9 @@ export class AuthComponent {
           }
         },
         error: err => {
+          this.submitted = false;
           this.error = err.error;
         },
-        complete: () => this.submitted = false,
       });
   }
 

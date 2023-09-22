@@ -8,6 +8,7 @@ import { UserProfileComponent } from './features/user-profile/user-profile.compo
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { AdminComponent } from './features/admin/admin.component';
 import { CarTableComponent } from './features/admin/car-table/car-table.component';
+import { AuthRegisterComponent } from './core/auth/auth.register.component';
 
 const routes: Routes = [
   { path: '', component: AuthComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'user-profile', component: UserProfileComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'cars', component: CarTableComponent },
+  { path: 'register', component: AuthRegisterComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 

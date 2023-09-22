@@ -3,4 +3,10 @@
 }
 #add-car:hover {
     cursor: pointer;
+    transform: scale(1.01);
+}
+
+#form {
+    display: flex;
+    justify-content: center;
 }

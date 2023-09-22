@@ -1,6 +1,21 @@
 <div class="d-flex justify-content-center w-100">
-    <div class="p-5" style="width: 60%;">
-        <app-create-car></app-create-car>
+    <div class="p-5" style="width: 80%;">
+        <div class="d-flex flex-row justify-content-around">
+            <input type="date" [(ngModel)]="start" (input)="getData()" class="form-control">
+            <p>To</p>
+            <input type="date" [(ngModel)]="end" (input)="getData()" class="form-control">
+            <!-- <p>Year:</p>
+            <ng-select class="form-control" [items]="years" bindLabel="years" bindValue="years">
+            </ng-select> -->
+        </div>
     </div>
-    
 </div>
+<canvas
+*ngIf="data"
+baseChart 
+id="chart"
+[type]="'line'" 
+[data]="lineChartData" 
+[options]="lineChartOptions" 
+[legend]="lineChartLegend">
+</canvas>

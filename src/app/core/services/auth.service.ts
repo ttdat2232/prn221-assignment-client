@@ -9,6 +9,11 @@ import { AuthenticateResponse } from '../models/auth.response.model';
   providedIn: 'root'
 })
 export class AuthService {
+
+  register(email: string, password: string): Observable<AuthenticateResponse> {
+    let auth = new AuthenticateModel(email, password);
+    return this.http.post<AuthenticateResponse>(this.authApiUrl + "register", auth);
+  }
   authApiUrl: string =  AppConstant.API_BASE_URL + "api/Authenticate/";
   constructor(private http: HttpClient) { }
 

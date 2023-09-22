@@ -1,4 +1,17 @@
-<h1 id="add-car">+</h1>
+<h1 id="add-car" (click)="onClickPlusButton()">+</h1>
+<div 
+*ngIf="formOpened"
+id="form"
+class="card">
+    <div class="card-body py-5 px-md-5">
+        <app-create-car 
+        (isEventFinishSuccessFully)="handleAfterFormSubmission($event)"
+        (isUpdated)="handleAfterUpdated($event)" 
+        [btnName]="btnName" 
+        [car]="createCar"
+        [carId]="carId"></app-create-car>
+    </div>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -25,10 +38,10 @@
             <td>{{car.fuelType}}</td>
             <td>{{car.carRentingPricePerDay}}</td>
             <td>
-                <button [disabled]="car.carStatus === 0" class="btn btn-primary">Update</button>
+                <button [disabled]="car.carStatus === 0" class="btn btn-primary" (click)="onUpdate(car)">Update</button>
             </td>
             <td>
-                <button [disabled]="car.carStatus === 0" class="btn btn-danger">Delete</button>
+                <button [disabled]="car.carStatus === 0" class="btn btn-danger" (click)="onDelete(car)">Delete</button>
             </td>
         </tr>
     </tbody>

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { CarComponent } from './features/car/car.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ApiInterceptor } from './core/interceptors/api.interceptor';
+
 import { CarInforComponent } from './features/car/car-infor/car-infor.component';
 import { NavbarComponent } from './core/layouts/navbar/navbar.component';
 import { HeaderComponent } from './core/layouts/header/header.component';
@@ -19,7 +20,10 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
 import { AdminComponent } from './features/admin/admin.component';
 import { CarTableComponent } from './features/admin/car-table/car-table.component';
 import { CreateCarComponent } from './features/admin/create-car/create-car.component';
+import { AuthRegisterComponent } from './core/auth/auth.register.component';
+
 import { NgSelectModule } from '@ng-select/ng-select';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
     AdminComponent,
     CarTableComponent,
     CreateCarComponent,
+    AuthRegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     FormsModule,
     NgxPaginationModule,
     ReactiveFormsModule,
-    NgSelectModule
+    NgSelectModule,
+    NgChartsModule,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor ,multi: true}

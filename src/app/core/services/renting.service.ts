@@ -26,4 +26,7 @@ export class RentingService {
   getUserRentingsTransaction(userId: number): Observable<RentingTransaction[]> {
     return this.http.get<RentingTransaction[]>(`${this.rentingApiUrl}/${userId}`);
   }
+  getStatistic(start: Date, end: Date): Observable<any> {
+    return this.http.get<any>(this.rentingApiUrl + `/statistic?start=${start}&end=${end}`);
+  }
 }
